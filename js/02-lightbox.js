@@ -6,8 +6,10 @@ const galleryList = document.querySelector(".gallery");
 galleryItems.forEach((picture) =>
   galleryList.insertAdjacentHTML(
     "beforeend",
-    `<li style="display: block" <a class="gallery__item" href="${picture.original}">
-<img class="gallery__image" src="${picture.preview}" alt="${picture.description}" />
+    `<li> <a class="gallery__item gallery__link" href="${picture.original}">
+<img class="gallery__image" src="${picture.preview}" title="${picture.description}" />
 </a></li>`
   )
 );
+
+var lightbox = new SimpleLightbox(".gallery a", { captionDelay: 250 });
