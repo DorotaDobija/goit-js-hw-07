@@ -5,7 +5,7 @@ const text = document.querySelector("#name-output")
 const textAdded = () => {
 
     if (textInput.value !== "" && textInput.value !== " ") {
-        text.innerHTML = textInput.value;
+        text.innerHTML = textInput.value.trim();
     } else text.innerHTML = "Anonymous";
 
     }
