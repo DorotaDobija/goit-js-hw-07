@@ -15,15 +15,16 @@ function getRandomHexColor() {
 
 const createBoxes = (amount) => {
   amount = inputEl.value;
+  const boxesArr = [];
 
   if (amount > 0 && amount <= 100) {
-     for (let i = amount; i <= amount && i > 0; i--) { 
-   
-    const box = `<div style = "width: ${20 + (i * 10)}px; height: ${20 + (i * 10)}px; background-color: ${getRandomHexColor()}; margin: 10px"></div>`;
-
-    divEl.insertAdjacentHTML("afterbegin", box);
-    };
-  }
+    for (let i = amount; i <= amount && i > 0; i--) { 
+      boxesArr.push(`<div style = "width: ${20 + (i * 10)}px; height: ${20 + (i * 10)}px; background-color: ${getRandomHexColor()}; margin: 10px"></div>`)
+    }
+  };
+  
+  const allBoxes = boxesArr.join("");
+  divEl.insertAdjacentHTML("afterbegin", allBoxes);
   inputClear();
 }
 
